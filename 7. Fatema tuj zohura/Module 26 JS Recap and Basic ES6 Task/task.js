@@ -6,6 +6,14 @@ if block এর ভিতরে console.log করে দেখাও কোন�
 */
 // Ans:
 
+function add () {
+    
+  var n = 10;
+}
+// console.log( n )
+
+
+
 /* 
 ? Qs: 2
 calculateTotal নামে একটি function বানাও।
