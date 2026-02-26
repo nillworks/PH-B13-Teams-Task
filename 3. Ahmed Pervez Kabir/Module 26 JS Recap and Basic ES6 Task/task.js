@@ -6,6 +6,13 @@ if block এর ভিতরে console.log করে দেখাও কোন�
 */
 // Ans:
 
+function Add() {
+  let number = 10;
+}
+console.log(number);
+
+Add();
+
 /* 
 ? Qs: 2
 calculateTotal নামে একটি function বানাও।
