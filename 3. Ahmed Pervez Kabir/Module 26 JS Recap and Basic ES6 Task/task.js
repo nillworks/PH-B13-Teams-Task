@@ -9,7 +9,7 @@ if block এর ভিতরে console.log করে দেখাও কোন�
 function Add() {
   let number = 10;
 }
-console.log(number);
+// console.log(number);
 
 Add();
 
@@ -21,6 +21,10 @@ tax না দিলে 5 ধরবে।
 tax দিলে সেই tax ব্যবহার করবে।
 */
 // Ans:
+function calculateTotal(price = 5, price1 = 10){
+  console.log(price + price1);
+}
+calculateTotal()
 
 /* 
 ? Qs: 3
@@ -33,6 +37,13 @@ const student = {
 }
 */
 // Ans:
+const student = {
+  name: "Shipon",
+  age: 22,
+  skill: "JavaScript"
+}
+const studentInfo = `student name is ${student.name} and his age is ${student.age}. He is expert in ${student.skill}.`;
+console.log(studentInfo);
 
 /* 
 ? Qs: 4
