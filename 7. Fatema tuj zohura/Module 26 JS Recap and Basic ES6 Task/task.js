@@ -6,6 +6,30 @@ if block এর ভিতরে console.log করে দেখাও কোন�
 */
 // Ans:
 
+function  add () {
+    
+  var num1=10;
+  let num2=20;
+  const num3=30;
+  // console.log(num1)
+  
+  if(true) {
+  //   var b1=50;
+  // let b2=60;
+  // const b3=70;
+
+    console.log(num3)
+    
+  }
+
+  // console.log( b2 )
+
+}
+
+add()
+
+
+
 /* 
 ? Qs: 2
 calculateTotal নামে একটি function বানাও।
@@ -15,17 +39,30 @@ tax দিলে সেই tax ব্যবহার করবে।
 */
 // Ans:
 
+function calculateTotal (price=5) {
+  return price
+}
+
+let number=calculateTotal()
+// console.log( number )
+
+
 /* 
 ? Qs: 3
 নিচের object থেকে একটি sentence বানাও (template string ব্যবহার করে)।
-
+*/
 const student = {
   name: "Shipon",
   age: 22,
   skill: "JavaScript"
 }
-*/
+
+
+
 // Ans:
+
+const sentence=`My name is ${student.name}. i'am ${student.age} years old. i'am learning ${student.skill}.`
+// console.log( sentence )
 
 /* 
 ? Qs: 4
@@ -36,6 +73,15 @@ Math.max ব্যবহার করা যাবে না।
 */
 // Ans:
 
+let count = [6, 7, 8]
+
+const maxNum=(a, b, c) => count 
+let arr=Math.max(...count)
+  // console.log( arr )
+
+
+
+
 /* 
 ? Qs: 5
 const numbers = [10, 25, 60, 5, 80];
@@ -45,10 +91,20 @@ const numbers = [10, 25, 60, 5, 80];
 */
 // Ans:
 
+const numbers=[10, 25, 60, 5, 80];
+let num=Math.max(...numbers)
+// console.log(num)
+
+
+let numbers2=[...numbers]
+numbers2.push(100)
+// console.log( numbers )
+// console.log( numbers2 )
+
 /* 
 ? Qs: 6
 নিচের object থেকে name, email এবং city আলাদা করে বের করো (destructuring ব্যবহার করে)।
-
+*/
 const user = {
   id: 101,
   name: "Rahim",
@@ -58,8 +114,17 @@ const user = {
     country: "Bangladesh"
   }
 }
-*/
+
 // Ans:
+
+const {id}=user
+// console.log(id)
+
+const {email}=user
+// console.log(email)
+
+const {city}=user.address
+// console.log(city)
 
 /* 
 ? Qs: 7
@@ -77,8 +142,33 @@ optional chaining দিয়ে একটি property access করো।
 */
 // Ans:
 
+let car = {
+  brand: 'tesla', 
+  model: 'Model s Plaid', 
+  year: 2024, 
+  moreInformation: {
+    color: "red",
+    engineInfo: {
+      engine: "Electric",
+      // speedInfo: {
+      //   speed:"200 mph"
+      // }
+    }
+  }
+
+}
+
+// console.log( car.moreInformation.engineInfo?.speed )
+
 /* 
 ? Qs: 9
+
+
+1. সব নাম print করো।
+2. total salary বের করো।
+*/
+// Ans:
+
 const company = {
   name: "Tech Corp",
   employees: [
@@ -88,10 +178,38 @@ const company = {
   ]
 }
 
-1. সব নাম print করো।
-2. total salary বের করো।
+//TODO: name print
+/* 
+let access1=company.employees[0].name
+console.log( access1 )
+let access2=company.employees[1].name
+console.log( access2 )
+let access3=company.employees[2].name
+console.log(access3)
 */
-// Ans:
+
+//TODO: name print
+
+company.employees.forEach((employ1) => {
+  // console.log( employ1.name )
+})
+
+
+//TODO: total salary
+
+let total = 0;
+
+company.employees.forEach((employ) => {
+  // console.log( employ )
+  total+=employ.salary
+  return total
+})
+
+// console.log( total )
+
+
+
+
 
 /* 
 ? Qs: 10
@@ -99,3 +217,58 @@ Object.seal() এবং Object.freeze() এর পার্থক্য লি�
 ছোট example দাও।
 */
 // Ans:
+
+//TODO: object.seal() & object.freeze() er moddhe parthokko:
+
+//TODO: freeze korle sei object er (value modify) , (notun value add), ( value delete) kora jay na
+//TODO: seal  korle sei object er (value delete)  , (notun value) add kora jay na but value modify kora jay
+
+// example 
+{
+
+//TODO: object.freeze()
+
+let func1={
+  name: "fatema",
+  age: 21
+}
+
+ Object.seal(func1)
+//  console.log(func1)
+
+
+func1.name='Zohura' //value modify
+// console.log( func1 )
+
+func1.address='joypurhat' //notun value add
+// console.log( func1 )
+
+delete func1.age //value delete
+// console.log( func1 )
+
+}
+
+
+{
+
+  //TODO: Object.seal()
+  
+  let func1={
+  name: "fatema",
+  age: 21
+  }
+  
+    Object.seal(func1)
+//  console.log(func1 )
+
+func1.name='Zohura' //value modify
+// console.log( func1 )
+
+func1.address='joypurhat' //notun value add
+// console.log( func1 )
+
+delete func1.age //value delete
+// console.log( func1 )
+
+
+}
