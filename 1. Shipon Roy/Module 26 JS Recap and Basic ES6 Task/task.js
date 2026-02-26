@@ -6,6 +6,13 @@ if block এর ভিতরে console.log করে দেখাও কোন�
 */
 // Ans:
 
+const number = 10;
+function addNumber() {
+  const num2 = 10;
+  console.log(number);
+}
+//console.log(num2);
+
 /* 
 ? Qs: 2
 calculateTotal নামে একটি function বানাও।
@@ -14,6 +21,11 @@ tax না দিলে 5 ধরবে।
 tax দিলে সেই tax ব্যবহার করবে।
 */
 // Ans:
+
+function calculateTotal(price = 0) {
+  console.log(price);
+}
+calculateTotal();
 
 /* 
 ? Qs: 3
@@ -27,6 +39,13 @@ const student = {
 */
 // Ans:
 
+const student = {
+  name: 'Shipon',
+  age: 22,
+  skill: 'JavaScript',
+};
+const studentsTemp = `My name is ${student.name}. age is ${student.age} skill is ${student.skill}`;
+
 /* 
 ? Qs: 4
 একটি arrow function লেখো।
@@ -36,7 +55,23 @@ Math.max ব্যবহার করা যাবে না।
 */
 // Ans:
 
+const findLargest = (a, b, c) => {
+  let largest = a;
+
+  if (b > largest) {
+    largest = b;
+  }
+
+  if (c > largest) {
+    largest = c;
+  }
+
+  return largest;
+};
+
+console.log(findLargest(10, 25, 15));
 /* 
+
 ? Qs: 5
 const numbers = [10, 25, 60, 5, 80];
 
@@ -44,6 +79,10 @@ const numbers = [10, 25, 60, 5, 80];
 2. নতুন array বানাও এবং 100 যোগ করো।
 */
 // Ans:
+
+const numbers = [10, 25, 60, 5, 80];
+const newNumbersArr = [...numbers];
+console.log(newNumbersArr);
 
 /* 
 ? Qs: 6
@@ -61,6 +100,24 @@ const user = {
 */
 // Ans:
 
+const user = {
+  id: 101,
+  name: 'Rahim',
+  email: 'rahim@gmail.com',
+  address: {
+    city: 'Dhaka',
+    country: 'Bangladesh',
+  },
+};
+
+const {
+  name,
+  email,
+  address: { city },
+} = user;
+
+console.log(name, email, city);
+
 /* 
 ? Qs: 7
 একটি product object বানাও।
@@ -69,6 +126,9 @@ const user = {
 3. একটি property delete করো।
 */
 // Ans:
+const product = { name: 'book', price: 100 };
+console.log(Object.keys(product));
+console.log(Object.values(product));
 
 /* 
 ? Qs: 8
@@ -76,6 +136,9 @@ const user = {
 optional chaining দিয়ে একটি property access করো।
 */
 // Ans:
+
+const objects = { name: 'shipon' };
+console.log(objects?.name);
 
 /* 
 ? Qs: 9
@@ -93,9 +156,27 @@ const company = {
 */
 // Ans:
 
+const company = {
+  name: 'Tech Corp',
+  employees: [
+    { name: 'Rahim', salary: 20000 },
+    { name: 'Karim', salary: 30000 },
+    { name: 'Jamal', salary: 25000 },
+  ],
+};
+
+const totalSalary = company.employees.reduce((sum, emp) => {
+  return sum + emp.salary;
+}, 0);
+
+console.log(totalSalary);
+
 /* 
 ? Qs: 10
 Object.seal() এবং Object.freeze() এর পার্থক্য লিখো।
 ছোট example দাও।
 */
 // Ans:
+
+// seal modify করা যায় |
+// freeze কিছুই change করা যায় না |
