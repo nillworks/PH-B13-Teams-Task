@@ -200,6 +200,27 @@ const company = {
 2. total salary বের করো।
 */
 // Ans:
+const company = {
+  name: "Tech Corp",
+  employees: [
+    { name: "Rahim", salary: 20000 },
+    { name: "Karim", salary: 30000 },
+    { name: "Jamal", salary: 25000 }
+  ]
+}
+
+// 1. print names
+for (let emp of company.employees) {
+  console.log(emp.name);
+}
+
+// 1. Total Salary
+let total = 0;
+for (let emp of company.employees) {
+  total = total + emp.salary;
+}
+
+console.log("Total Salary:", total); 
 
 /* 
 ? Qs: 10
@@ -207,3 +228,28 @@ Object.seal() এবং Object.freeze() এর পার্থক্য লি�
 ছোট example দাও।
 */
 // Ans:
+//difference
+// seal() → locks the object structure (no add/delete), but existing property values can be changed.
+
+// freeze() → completely locks the object (no add/delete, no value change).
+
+
+const person = { name: "Rahim", age: 25 };
+Object.seal(person);
+
+person.age = 26;      
+person.name = "Karim"; 
+person.gender = "Male";    
+delete person.name;      
+console.log(person);
+ //freeze
+ const person2 = { name: "Rahim", age: 25 };
+Object.freeze(person2);
+
+person2.age = 20;      
+
+
+
+person2.gender = "Male";   
+delete person2.name;  
+console.log(person2);
