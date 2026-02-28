@@ -15,6 +15,8 @@ const g = { name: "Karim" };
 */
 // Ans:
 
+//*   1,2,3,4,5, agolo Primitive Data && 6,7 Non-Primitive Data
+
 /*
 ? Qs: 2
 নিচের কোডের output কী হবে এবং কেন হবে?
@@ -26,6 +28,8 @@ console.log(x);
 */
 
 // Ans:
+
+//* akane value assign hoy nai aijono undefined asbe.
 
 /*
 ? Qs: 3
@@ -45,6 +49,8 @@ false
 */
 
 // Ans:
+
+// * 1,3,9 => false and baki sobgola true
 
 /*
 ? Qs: 4
@@ -104,6 +110,14 @@ Callback function ব্যবহার করে এমন একটি functio
 
 // Ans:
 
+const doubleNumbers = (n1, n2) => {
+  return n1 * n2;
+};
+const add = (name, fd) => {
+  console.log(name, fd(10, 2));
+};
+const result = add('nill', doubleNumbers);
+
 /*
 ? Qs: 8
 Pass by value এবং pass by reference নিচের উদাহরণ দিয়ে explain করো।
@@ -129,6 +143,15 @@ console.log(obj.name);
 
 // Ans:
 
+let num = 10;
+function changeValue(x) {
+  x = 20;
+}
+// console.log(changeValue(num));
+console.log(num);
+
+//* 1. pass by value || 2. pass by
+
 /*
 ? Qs: 9
 map ব্যবহার করে নিচের array থেকে সব সংখ্যাকে double করো।
@@ -139,6 +162,9 @@ const numbers = [2, 4, 6, 8];
 */
 
 // Ans:
+const numbers = [2, 4, 6, 8];
+const doubleNumber = numbers.map(item => item * 2);
+console.log(doubleNumber);
 
 /*
 ? Qs: 10
@@ -156,3 +182,18 @@ const products = [
 */
 
 // Ans:
+
+const products = [
+  { name: 'Mobile', price: 20000 },
+  { name: 'Laptop', price: 50000 },
+  { name: 'Watch', price: 3000 },
+];
+
+const filterPrice = products.filter(pri => pri.price > 10000);
+console.log(filterPrice);
+
+const priceFiend = products.find(item => item.price === 3000);
+console.log(priceFiend);
+
+const totalPrice = products.reduce((acc, item) => acc + item.price, 0);
+console.log(totalPrice);
