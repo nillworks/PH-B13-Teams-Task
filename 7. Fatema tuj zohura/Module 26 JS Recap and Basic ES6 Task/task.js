@@ -75,10 +75,11 @@ Math.max ব্যবহার করা যাবে না।
 
 let count = [6, 7, 8]
 
-const maxNum=(a, b, c) => count 
-let arr=Math.max(...count)
+// const maxNum=(a, b, c) => count 
+// let arr=Math.max(...count)
   // console.log( arr )
 
+let max=[0];
 
 
 
