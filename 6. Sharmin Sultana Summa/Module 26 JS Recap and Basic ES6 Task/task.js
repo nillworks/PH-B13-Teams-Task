@@ -4,7 +4,24 @@
 এর ভিতরে var, let, const ব্যবহার করো।
 if block এর ভিতরে console.log করে দেখাও কোনটা কাজ করে।
 */
-// Ans:
+// // Ans:
+function variables() {
+
+  var a = "I am var";
+  let b = "I am let";
+  const c = "I am const";
+
+  if (!false) {
+
+    var x = "This is var";
+    let y = "This is let";
+    const z = "This is const";
+
+    console.log("Inside the block:", a, b, c, x, y, z);
+  }
+
+  console.log("Outside the block:", a, b, c, x); }
+  variables()
 
 /* 
 ? Qs: 2
@@ -14,7 +31,18 @@ tax না দিলে 5 ধরবে।
 tax দিলে সেই tax ব্যবহার করবে।
 */
 // Ans:
+function calculateTotal(price, tax = 5) {
+  // if wont give tax (manually)
+  // if (tax === undefined) {
+  //   tax = 5;
+  // }
+  let total = price + (price * tax) / 100;
+  return total;
+}
 
+
+console.log(calculateTotal(1000));     
+console.log(calculateTotal(1000, 20)); 
 /* 
 ? Qs: 3
 নিচের object থেকে একটি sentence বানাও (template string ব্যবহার করে)।
@@ -26,7 +54,14 @@ const student = {
 }
 */
 // Ans:
+const student = {
+  name: "Shipon",
+  age: 22,
+  skill: "JavaScript"
+}
+const sentence = `He is ${student.name}. He is ${student.age} years old and He is an expert in ${student.skill}.`;
 
+console.log(sentence);
 /* 
 ? Qs: 4
 একটি arrow function লেখো।
@@ -35,6 +70,21 @@ const student = {
 Math.max ব্যবহার করা যাবে না।
 */
 // Ans:
+const largestNumber = (x, y, z) => {
+   let max = x;
+   if (y > max) {
+    max = y;
+  }
+  if (z > max) {
+    max = z;
+  }
+  return max;
+};
+
+console.log(largestNumber(10, 25, 15)); 
+console.log(largestNumber(50, 20, 30)); 
+console.log(largestNumber(5, 5, 5));   
+console.log(largestNumber(10, 50, 60)); 
 
 /* 
 ? Qs: 5
@@ -44,6 +94,23 @@ const numbers = [10, 25, 60, 5, 80];
 2. নতুন array বানাও এবং 100 যোগ করো।
 */
 // Ans:
+const numbers = [10, 25, 60, 5, 80];
+
+let maxNumber = numbers[0];
+const newArray = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  // Update largest number
+  if (numbers[i] > maxNumber) {
+    maxNumber = numbers[i];
+  }
+
+  // Add 100 and push to new array
+  newArray.push(numbers[i] + 100);
+}
+
+console.log("Largest number is:", maxNumber);       
+console.log(" Add 100 in New array :", newArray); 
 
 /* 
 ? Qs: 6
