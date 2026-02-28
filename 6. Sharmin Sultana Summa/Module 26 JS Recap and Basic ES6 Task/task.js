@@ -127,7 +127,23 @@ const user = {
 }
 */
 // Ans:
+const user = {
+  id: 101,
+  name: "Rahim",
+  email: "rahim@gmail.com",
+  address: {
+    city: "Dhaka",
+    country: "Bangladesh"
+  }
+};
 
+// Destructuring
+// const { name, email, address: { city } } = user; (short-cut)
+const { name, email, address } = user;  
+const { city } = address;             
+console.log(name);  
+console.log(email); 
+console.log(city);  
 /* 
 ? Qs: 7
 একটি product object বানাও।
@@ -136,14 +152,39 @@ const user = {
 3. একটি property delete করো।
 */
 // Ans:
+const product = {
+  id: 201,
+  name: "Laptop",
+  price: 55000
+};
 
+// 1. keys 
+console.log(Object.keys(product));
+
+// 2. values 
+console.log(Object.values(product)); 
+
+// 3.delete a property
+delete product.price;
+console.log(product); 
 /* 
 ? Qs: 8
 একটি nested object বানাও।
 optional chaining দিয়ে একটি property access করো।
 */
 // Ans:
+const user = {
+  name: "Rahim",
+  address: {
+    city: "Dhaka",
+    country: "Bangladesh"
+  }
+};
 
+// Optional chaining 
+console.log(user.address?.city);     
+console.log(user.address?.country);   
+console.log(user.address?.division);  //undefined 
 /* 
 ? Qs: 9
 const company = {
