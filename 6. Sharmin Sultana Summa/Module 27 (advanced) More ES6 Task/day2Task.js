@@ -243,7 +243,7 @@ const products = [
 
  ১. ১০,০০০ টাকার বেশি product filter করো
  ২. price 3000 এমন product খুঁজে বের করো
- ৩. সব product এর total price বের করো
+ ৩. সব product এর total price বের করোJ
 */
 
 // Ans:
