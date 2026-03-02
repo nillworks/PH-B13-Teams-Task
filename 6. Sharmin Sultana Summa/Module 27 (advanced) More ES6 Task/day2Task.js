@@ -243,7 +243,21 @@ const products = [
 
  ১. ১০,০০০ টাকার বেশি product filter করো
  ২. price 3000 এমন product খুঁজে বের করো
- ৩. সব product এর total price বের করো
+ ৩. সব product এর total price বের করোJ
 */
 
 // Ans:
+const products = [
+  { name: "Mobile", price: 20000 },
+  { name: "Laptop", price: 50000 },
+  { name: "Watch", price: 3000 }
+];
+
+//1000 taka products
+const expensive = products.filter( product =>product.price >10000);
+console.log(expensive) //if  I want MULTIPLE things use "Filter"
+ 
+const cheapPrice = products.find(product => product.price ===3000);
+console.log(cheapPrice); // If I want ONE specific thing "Find"
+const total = products.reduce((sum, product) => sum + product.price, 0);  // If I want to BUILD something
+console.log(total);
