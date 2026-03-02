@@ -17,7 +17,7 @@ Expected Output:
 // const numbers = [1, 2, 3, 4, 5];
 
 // const square = numbers.map(num => num * num);
-// // const square = numbers.map(num => Math.pow(num, 2)); // Short formula
+// const square = numbers.map(num => Math.pow(num, 2)); // Short formula
 // console.log(square);
 /*
 ? Qs: 2
