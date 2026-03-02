@@ -111,9 +111,9 @@ Expected Output:
 // Ans:
 const marks = [70, 80, 90, 60];
 const totalMarks = marks.reduce((t, curr) => {
-  return total = t + curr;
+  return t + curr;
 }, 0)
-// console.log(total)
+// console.log(totalMarks)
 
 
 
