@@ -99,6 +99,20 @@ const numbers = [121, 345, 444, 98, 101];
 Expected Output: [121, 444, 101]
 */
 //* Ans:
+// const numbers = [121, 345, 444, 98, 101];
+
+const palindrome = [];
+
+for (let num of numbers) {
+  let str = num.toString();
+  let reversed = str.split('').reverse().join('');
+
+  if (str === reversed) {
+    palindrome.push(num);
+  }
+}
+
+console.log(palindrome);
 
 /* 
 ? Problem 6
@@ -121,6 +135,25 @@ Bangladesh
 */
 //* Ans:
 
+const user = {
+  name: 'Rahim',
+  address: {
+    city: 'Dhaka',
+    country: 'Bangladesh',
+  },
+  age: 25,
+};
+
+for (let key in user) {
+  if (typeof user[key] === 'object') {
+    for (let subKey in user[key]) {
+      console.log(user[key][subKey]);
+    }
+  } else {
+    console.log(user[key]);
+  }
+}
+
 /* 
 ? Problem 7
 একটা array আছে। manually reverse করো (reverse() ছাড়া)।
@@ -129,6 +162,16 @@ const numbers = [1, 2, 3, 4, 5];
 Expected Output: [5, 4, 3, 2, 1]
 */
 //* Ans:
+
+// const numbers = [1, 2, 3, 4, 5];
+
+const reversed = [];
+
+for (let i = numbers.length - 1; i >= 0; i--) {
+  reversed.push(numbers[i]);
+}
+
+console.log(reversed);
 
 /* 
 ? Problem 8
@@ -139,6 +182,20 @@ Expected Output: "JavaScript"
 */
 //* Ans:
 
+const sentence = 'I love learning JavaScript deeply';
+
+const words = sentence.split(' ');
+
+let longest = '';
+
+for (let word of words) {
+  if (word.length > longest.length) {
+    longest = word;
+  }
+}
+
+console.log(longest);
+
 /* 
 ? Problem 9
 একটা array আছে। manually ascending order এ sort করো (bubble sort বা যেকোনো logic)।
@@ -147,6 +204,20 @@ const numbers = [5, 2, 9, 1, 7];
 Expected Output: [1, 2, 5, 7, 9]
 */
 //* Ans:
+
+// const numbers = [5, 2, 9, 1, 7];
+
+for (let i = 0; i < numbers.length; i++) {
+  for (let j = 0; j < numbers.length - 1; j++) {
+    if (numbers[j] > numbers[j + 1]) {
+      let temp = numbers[j];
+      numbers[j] = numbers[j + 1];
+      numbers[j + 1] = temp;
+    }
+  }
+}
+
+console.log(numbers);
 
 /* 
 ? Problem 10
@@ -166,3 +237,21 @@ Expected Output:
 ]
 */
 //* Ans:
+
+const students = [
+  { name: 'Ali', mark: 45 },
+  { name: 'Babu', mark: 75 },
+  { name: 'Chotu', mark: 85 },
+];
+
+for (let i = 0; i < students.length; i++) {
+  for (let j = 0; j < students.length - 1; j++) {
+    if (students[j].mark < students[j + 1].mark) {
+      let temp = students[j];
+      students[j] = students[j + 1];
+      students[j + 1] = temp;
+    }
+  }
+}
+
+console.log(students);
