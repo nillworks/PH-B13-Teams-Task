@@ -12,6 +12,15 @@ Expected Output: 89
 */
 //* Ans:
 
+const numbers = [12, 45, 2, 89, 32];
+let largestNumber = 0;
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > numbers[i + 1]) {
+    largestNumber = numbers[i];
+  }
+}
+console.log(largestNumber);
+
 /* 
 ? Problem 2
 একটা string আছে। manually character frequency count করো।
@@ -30,6 +39,18 @@ Expected Output:
 }
 */
 //* Ans:
+const str = 'programming';
+let output = {};
+for (let i = 0; i < str.length; i++) {
+  const char = str[i];
+  if (output[char]) {
+    output[char]++;
+  } else {
+    output[char] = 1;
+  }
+}
+
+console.log(output);
 
 /* 
 ? Problem 3
@@ -40,6 +61,16 @@ Expected Output: [1, 2, 3, 4, 5]
 */
 //* Ans:
 
+const numbers3 = [1, 2, 2, 3, 4, 4, 5, 1];
+const newArr = [];
+
+for (let i = 0; i < numbers3.length; i++) {
+  if (!newArr.includes(numbers3[i])) {
+    newArr.push(numbers3[i]);
+  }
+}
+console.log(newArr);
+
 /* 
 ? Problem 4
 একটা array আছে। manually second largest number বের করো।
@@ -48,6 +79,17 @@ const numbers = [10, 5, 8, 20, 15];
 Expected Output: 15
 */
 //* Ans:
+const numbers4 = [10, 5, 8, 20, 15];
+let largestNumbers = -Infinity;
+let largestSecondNumber = -Infinity;
+for (let i = 0; i < numbers4.length; i++) {
+  if (numbers4[i] > numbers4[i + 1]) {
+    largestNumbers = numbers4[i];
+  } else if (numbers4[i] > numbers4[i + 1] && numbers4[i] !== numbers4[i + 1]) {
+    largestSecondNumber = numbers4[i];
+  }
+}
+console.log(largestSecondNumber);
 
 /* 
 ? Problem 5
